@@ -1,0 +1,49 @@
+---
+/**
+ * SEO Component
+ * Handles meta tags, Open Graph, Twitter Cards
+ */
+
+interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+    image?: string;
+    type?: 'website' | 'article';
+    noindex?: boolean;
+}
+
+const { title, description, canonical = Astro.url.href, image = '/images/og-image.jpg', type = 'website', noindex = false } = Astro.props;
+
+const siteName = 'Anouar Boost';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+// Handle image URL properly - work in dev (no Astro.site) and production
+const imageUrl = image.startsWith('http') ? image : Astro.site ? new URL(image, Astro.site).href : `${Astro.url.origin}${image}`;
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="fr_FR" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonical} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageUrl} />
+
+<!-- Additional SEO -->
+<meta name="language" content="French" />
+<meta name="geo.region" content="FR" />

@@ -1,0 +1,67 @@
+---
+/**
+ * Base Layout
+ * Master layout with SEO, fonts, and structure
+ */
+
+import SEO from '../components/seo/SEO.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/globals.css';
+
+interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+    image?: string;
+    type?: 'website' | 'article';
+    includePersonSchema?: boolean;
+    includeServiceSchema?: boolean;
+}
+
+const { title, description, canonical, image, type = 'website', includePersonSchema = false, includeServiceSchema = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Preload Inter Variable Font -->
+        <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin />
+
+        <!-- SEO Meta Tags -->
+        <SEO title={title} description={description} canonical={canonical} image={image} type={type} />
+
+        <!-- Structured Data -->
+        {includePersonSchema && <SchemaOrg type="person" />}
+        {includeServiceSchema && <SchemaOrg type="service" />}
+
+        <!-- Netlify Identity Widget -->
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    </head>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+
+        <!-- Netlify Identity redirect -->
+        <script is:inline>
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', (user) => {
+                    if (!user) {
+                        window.netlifyIdentity.on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

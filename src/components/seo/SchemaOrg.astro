@@ -1,0 +1,74 @@
+---
+/**
+ * Schema Org Component
+ * JSON-LD structured data for SEO
+ */
+
+type SchemaType = 'person' | 'service' | 'review';
+
+interface Props {
+    type: SchemaType;
+    data?: any;
+}
+
+const { type, data } = Astro.props;
+
+const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Anouar Sbia',
+    alternateName: 'Anouar Boost',
+    url: 'https://www.anouarboost.fr',
+    image: 'https://www.anouarboost.fr/images/anouar-profile.jpg',
+    jobTitle: 'Consultant SEO & E-commerce Shopify',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'Anouar Boost'
+    },
+    address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'FR'
+    },
+    knowsAbout: ['SEO', 'E-commerce', 'Shopify', 'Core Web Vitals', 'Google Analytics']
+};
+
+const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Anouar Boost - Consultant SEO Shopify',
+    image: 'https://www.anouarboost.fr/images/logo.png',
+    url: 'https://www.anouarboost.fr',
+    priceRange: '€€',
+    address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'FR'
+    },
+    areaServed: {
+        '@type': 'Country',
+        name: 'France'
+    },
+    serviceType: ['SEO Shopify', 'Audit SEO Technique', 'Optimisation E-commerce'],
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '15'
+    }
+};
+
+const getSchema = () => {
+    switch (type) {
+        case 'person':
+            return personSchema;
+        case 'service':
+            return serviceSchema;
+        case 'review':
+            return data; // Custom review schema passed as prop
+        default:
+            return null;
+    }
+};
+
+const schema = getSchema();
+---
+
+{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

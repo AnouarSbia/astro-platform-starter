@@ -1,0 +1,83 @@
+---
+/**
+ * Social Proof Section
+ * Metrics and testimonials to build trust
+ */
+
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="section bg-light-grey">
+    <Container>
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+            <p class="text-sm font-bold text-electric-blue uppercase tracking-wide mb-2">Ils me font confiance</p>
+            <h2 class="text-charcoal">Résultats Prouvés Pour Boutiques Shopify</h2>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Metric 1 -->
+            <div class="text-center">
+                <div class="text-5xl md:text-6xl font-extrabold text-electric-blue mb-2">+150%</div>
+                <p class="text-base font-medium text-charcoal">Trafic moyen</p>
+                <p class="text-sm text-muted mt-1">Augmentation organique sur 6 mois</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="text-center">
+                <div class="text-5xl md:text-6xl font-extrabold text-electric-blue mb-2">6 mois</div>
+                <p class="text-base font-medium text-charcoal">Délai résultats</p>
+                <p class="text-sm text-muted mt-1">Premiers résultats mesurables</p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="text-center">
+                <div class="text-5xl md:text-6xl font-extrabold text-electric-blue mb-2">92%</div>
+                <p class="text-base font-medium text-charcoal">Satisfaction client</p>
+                <p class="text-sm text-muted mt-1">Taux de recommandation</p>
+            </div>
+        </div>
+
+        <!-- Featured Testimonial -->
+        <Card elevation="1" class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <!-- Client Photo Placeholder -->
+                <div class="flex-shrink-0">
+                    <div class="w-24 h-24 rounded-full bg-light-grey flex items-center justify-center">
+                        <svg class="w-12 h-12 text-charcoal-40" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Testimonial Content -->
+                <div class="flex-1 text-center md:text-left">
+                    <!-- Stars -->
+                    <div class="flex justify-center md:justify-start gap-1 mb-3">
+                        {
+                            [...Array(5)].map(() => (
+                                <svg class="w-5 h-5 text-electric-blue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            ))
+                        }
+                    </div>
+
+                    <!-- Quote -->
+                    <blockquote class="text-lg text-charcoal mb-4">
+                        "Notre CA organique a augmenté de <strong class="text-electric-blue">230% en 8 mois</strong>. Enfin un consultant qui tient ses
+                        promesses et explique clairement sa stratégie !"
+                    </blockquote>
+
+                    <!-- Client Info -->
+                    <div>
+                        <p class="font-bold text-base text-charcoal">Marie Dubois</p>
+                        <p class="text-sm text-muted">Fondatrice, Boutique Mode Éthique (Shopify)</p>
+                    </div>
+                </div>
+            </div>
+        </Card>
+    </Container>
+</section>

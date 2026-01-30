@@ -1,0 +1,43 @@
+---
+/**
+ * Button Component
+ * Supports: primary, secondary, ghost variants
+ * Follows Anouar Boost design system
+ */
+
+interface Props {
+    variant?: 'primary' | 'secondary' | 'ghost';
+    href?: string;
+    type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
+    class?: string;
+    target?: string;
+    rel?: string;
+    style?: string;
+}
+
+const { variant = 'primary', href, type = 'button', disabled = false, class: className = '', target, rel, ...rest } = Astro.props;
+
+const baseClasses = 'btn';
+const variantClasses = {
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    ghost: 'btn-ghost'
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
+
+const Element = href ? 'a' : 'button';
+---
+
+{
+    Element === 'a' ? (
+        <a href={href} class={classes} target={target} rel={rel} {...rest}>
+            <slot />
+        </a>
+    ) : (
+        <button type={type} class={classes} disabled={disabled} {...rest}>
+            <slot />
+        </button>
+    )
+}

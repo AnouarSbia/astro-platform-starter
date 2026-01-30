@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: fr
+
+collections:
+  # Blog Posts
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Date de publication", name: "pubDate", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string", default: "Anouar Sbia"}
+      - {label: "Image principale", name: "heroImage", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["SEO"]}
+      - {label: "Brouillon", name: "draft", widget: "boolean", default: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # Case Studies
+  - name: "case-studies"
+    label: "Études de Cas"
+    folder: "src/content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description courte", name: "description", widget: "text"}
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Secteur", name: "industry", widget: "string"}
+      - {label: "URL du site", name: "websiteUrl", widget: "string", required: false}
+      - {label: "Durée du projet", name: "duration", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image principale", name: "heroImage", widget: "image"}
+      - {label: "Logo du client", name: "clientLogo", widget: "image", required: false}
+      - label: "Résultats"
+        name: "results"
+        widget: "list"
+        fields:
+          - {label: "Métrique", name: "metric", widget: "string"}
+          - {label: "Valeur", name: "value", widget: "string"}
+          - {label: "Description", name: "description", widget: "string", required: false}
+      - label: "Témoignage"
+        name: "testimonial"
+        widget: "object"
+        fields:
+          - {label: "Citation", name: "quote", widget: "text"}
+          - {label: "Nom", name: "author", widget: "string"}
+          - {label: "Poste", name: "position", widget: "string"}
+      - {label: "Problématiques", name: "challenges", widget: "markdown"}
+      - {label: "Solutions apportées", name: "solutions", widget: "markdown"}
+      - {label: "Brouillon", name: "draft", widget: "boolean", default: false}
+
+  # Services
+  - name: "services"
+    label: "Services"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description courte", name: "description", widget: "string"}
+      - {label: "Icône", name: "icon", widget: "select", options: ["chart", "search", "code", "tools", "rocket"]}
+      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 1}
+      - {label: "Prix de base", name: "basePrice", widget: "string", required: false}
+      - label: "Caractéristiques"
+        name: "features"
+        widget: "list"
+        field: {label: "Caractéristique", name: "feature", widget: "string"}
+      - {label: "Texte du bouton", name: "ctaText", widget: "string", default: "En savoir plus"}
+      - {label: "Lien du bouton", name: "ctaLink", widget: "string", default: "/contact"}
+      - {label: "Description complète", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "published", widget: "boolean", default: true}

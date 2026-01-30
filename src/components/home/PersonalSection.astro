@@ -1,0 +1,103 @@
+---
+/**
+ * Personal Section
+ * Humanize the brand with personal story
+ */
+
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="section bg-light-grey">
+    <Container>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Photo -->
+            <div>
+                <div class="aspect-[4/5] rounded-lg overflow-hidden bg-white flex items-center justify-center shadow-lg">
+                    <!-- Placeholder for professional photo -->
+                    <div class="text-center p-8">
+                        <div class="w-48 h-48 mx-auto mb-4 bg-electric-blue/20 rounded-full flex items-center justify-center">
+                            <svg class="w-24 h-24 text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-muted">Photo professionnelle d'Anouar<br />en situation de travail</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+                <p class="text-sm font-bold text-electric-blue uppercase tracking-wide mb-4">L'Humain Derrière La Stratégie</p>
+
+                <h2 class="text-charcoal mb-6">Pourquoi Je Me Suis Spécialisé Sur Shopify ?</h2>
+
+                <div class="prose prose-lg text-charcoal-70 space-y-4">
+                    <p>
+                        Bonjour, je m'appelle <strong class="text-charcoal">Anouar</strong>.
+                    </p>
+
+                    <p>
+                        Après 5 ans à accompagner des dizaines d'e-commerçants, j'ai remarqué un problème récurrent : <strong class="text-charcoal"
+                            >les propriétaires de boutiques Shopify se font souvent arnaquer par des agences qui promettent la lune</strong
+                        > avec des techniques dépassées (ou pire, dangereuses pour votre site).
+                    </p>
+
+                    <p>
+                        Ma mission ? <strong class="text-charcoal">Démocratiser le SEO pour les TPE/PME françaises</strong> : vous donner les mêmes armes que les
+                        grandes enseignes, sans les budgets à 5 chiffres.
+                    </p>
+
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-electric-blue my-6">
+                        <p class="text-base font-medium text-charcoal mb-3">Mon approche est simple :</p>
+                        <ul class="space-y-2 text-base">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-electric-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Transparence totale</strong> : vous comprenez chaque action que je mets en place</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-electric-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Pédagogie</strong> : je vous forme pour que vous restiez autonome</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-electric-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span><strong>Résultats mesurables</strong> : on parle trafic, conversions, CA. Pas de métriques de vanité.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Si vous cherchez des promesses de "1ère position en 30 jours", ce n'est pas ici. Mais si vous voulez <strong class="text-charcoal"
+                            >un partenaire de confiance pour construire une vraie stratégie SEO durable</strong
+                        >, on devrait discuter.
+                    </p>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <Button variant="primary" href="/contact"> Réserver Un Appel Découverte </Button>
+                    <Button variant="ghost" href="/a-propos"> En Savoir Plus Sur Mon Parcours → </Button>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>

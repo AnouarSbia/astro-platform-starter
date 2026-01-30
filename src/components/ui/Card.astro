@@ -1,0 +1,24 @@
+---
+/**
+ * Card Component
+ * Supports: elevation-1 (border + subtle shadow), elevation-2 (no border + hover effect)
+ */
+
+interface Props {
+    elevation?: '1' | '2';
+    class?: string;
+}
+
+const { elevation = '1', class: className = '', ...rest } = Astro.props;
+
+const elevationClasses = {
+    '1': 'card-elevation-1',
+    '2': 'card-elevation-2'
+};
+
+const classes = `card ${elevationClasses[elevation]} ${className}`;
+---
+
+<div class={classes} {...rest}>
+    <slot />
+</div>

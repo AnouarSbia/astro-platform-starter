@@ -1,0 +1,82 @@
+---
+/**
+ * PAS Section (Problem / Agitation / Solution)
+ * Framework to address pain points and position offering
+ */
+
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="section bg-white">
+    <Container>
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="text-charcoal mb-4">Votre Boutique Shopify Mérite Mieux Que Page 3 de Google</h2>
+        </div>
+
+        <!-- 3 Blocks: Problem, Agitation, Solution -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Block 1: Problem -->
+            <div class="text-center p-8 rounded-lg bg-light-grey">
+                <!-- Icon -->
+                <div class="w-16 h-16 mx-auto mb-6 bg-error/10 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Votre Trafic Organique Stagne Depuis Des Mois</h3>
+
+                <p class="text-base text-charcoal-70 leading-relaxed">
+                    Vous avez créé une belle boutique Shopify, investi dans de beaux visuels, mais Google ne vous envoie que quelques visiteurs par jour. Vos
+                    concurrents moins qualitatifs vous dépassent sur vos propres mots-clés.
+                </p>
+            </div>
+
+            <!-- Block 2: Agitation -->
+            <div class="text-center p-8 rounded-lg bg-warning/10 border-2 border-warning">
+                <!-- Icon -->
+                <div class="w-16 h-16 mx-auto mb-6 bg-warning/20 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Chaque Jour Sans SEO = Argent Laissé Sur La Table</h3>
+
+                <p class="text-base text-charcoal-70 leading-relaxed">
+                    Pendant que vous dépendez de la publicité payante (Meta Ads, Google Ads), vos marges fondent. Et quand vous coupez le budget pub ? Le trafic
+                    s'effondre. Votre concurrent qui investit dans le SEO, lui, dort tranquille : son trafic est gratuit et durable.
+                </p>
+            </div>
+
+            <!-- Block 3: Solution -->
+            <div class="text-center p-8 rounded-lg text-white" style="background-color: #007BFF;">
+                <!-- Icon -->
+                <div class="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4 text-white">Un Plan SEO Sur-Mesure Pour Shopify (Sans Jargon Technique)</h3>
+
+                <p class="text-base text-white leading-relaxed mb-6">
+                    Je ne vends pas d'illusions. Mon approche combine <strong>audit technique</strong>, <strong>stratégie de contenu SEO</strong> et <strong
+                        >optimisation des performances</strong
+                    > (Core Web Vitals) pour des résultats mesurables en 3 à 6 mois. Pas de black hat, pas de promesses impossibles. Juste du SEO qui marche.
+                </p>
+
+                <Button variant="secondary" href="/contact" class="bg-white hover:bg-light-grey border-white" style="color: #007BFF;">
+                    Discutons de Votre Situation →
+                </Button>
+            </div>
+        </div>
+    </Container>
+</section>

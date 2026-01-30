@@ -1,0 +1,20 @@
+---
+/**
+ * Container Component
+ * Provides responsive margins following design system
+ * 20px (mobile), 40px (tablet), 80px (desktop >1440px)
+ */
+
+interface Props {
+    class?: string;
+    as?: 'div' | 'section' | 'article' | 'main' | 'aside';
+}
+
+const { class: className = '', as: Element = 'div', ...rest } = Astro.props;
+
+const classes = `container ${className}`;
+---
+
+<Element class={classes} {...rest}>
+    <slot />
+</Element>

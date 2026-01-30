@@ -1,0 +1,102 @@
+---
+/**
+ * Services Preview Section
+ * 3-column grid of core services
+ */
+
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="section bg-white">
+    <Container>
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <p class="text-sm font-bold text-electric-blue uppercase tracking-wide mb-2">Comment Je Vous Aide</p>
+            <h2 class="text-charcoal mb-4">Services SEO Pour Shopify</h2>
+            <p class="text-lg text-muted max-w-2xl mx-auto">Une approche complète pour transformer votre boutique en machine à trafic organique</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <Card elevation="2" class="text-center hover:border-electric-blue transition-all duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 bg-electric-blue/10 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                        ></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Audit SEO Technique</h3>
+
+                <p class="text-base text-charcoal-70 mb-6">Identifier les 20% de problèmes qui bloquent 80% de votre croissance</p>
+
+                <a href="/services#audit" class="inline-flex items-center gap-2 text-electric-blue font-medium hover:gap-3 transition-all">
+                    En savoir plus
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </Card>
+
+            <!-- Service 2 -->
+            <Card elevation="2" class="text-center hover:border-electric-blue transition-all duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 bg-electric-blue/10 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Optimisation Performance</h3>
+
+                <p class="text-base text-charcoal-70 mb-6">Core Web Vitals optimisés pour Shopify : vitesse = conversions</p>
+
+                <a href="/services#performance" class="inline-flex items-center gap-2 text-electric-blue font-medium hover:gap-3 transition-all">
+                    En savoir plus
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </Card>
+
+            <!-- Service 3 -->
+            <Card elevation="2" class="text-center hover:border-electric-blue transition-all duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 bg-electric-blue/10 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Stratégie de Contenu</h3>
+
+                <p class="text-base text-charcoal-70 mb-6">Topic clusters & cocon sémantique pour dominer vos mots-clés</p>
+
+                <a href="/services#contenu" class="inline-flex items-center gap-2 text-electric-blue font-medium hover:gap-3 transition-all">
+                    En savoir plus
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </Card>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12">
+            <a href="/services" class="inline-flex items-center gap-2 text-lg font-bold text-electric-blue hover:gap-3 transition-all">
+                Voir Tous Les Services
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </Container>
+</section>
